@@ -3,13 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>School Management System</title>
-
+    <title>{{ config('app.name') }}</title>
     @viteReactRefresh
     @vite('resources/js/app.jsx')
 </head>
 <body class="antialiased bg-gray-100">
-    <div id="app"></div>
+    <div id="app" data-app-name="{{ config('app.name') }}"></div>
 </body>
 </html>
