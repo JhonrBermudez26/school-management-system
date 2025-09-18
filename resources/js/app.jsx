@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import LoginForm from './components/LoginForm';
-import RegisterForm from './components/RegisterForm';
+import Login from './components/Login';
 
 function App() {
   const appName = document.getElementById('app').getAttribute('data-app-name');
   const [showLogin, setShowLogin] = useState(false);
-  const [showRegister, setShowRegister] = useState(false);
 
   return (
     <div>
@@ -18,11 +16,8 @@ function App() {
             <span className="fs-4">{appName}</span>
           </a>
           <div className="ms-auto">
-            <button className="btn btn-outline-light me-2" onClick={() => setShowLogin(true)}>
+            <button className="btn btn-outline-light" onClick={() => setShowLogin(true)}>
               Iniciar Sesión
-            </button>
-            <button className="btn btn-warning" onClick={() => setShowRegister(true)}>
-              Registro
             </button>
           </div>
         </div>
@@ -98,23 +93,7 @@ function App() {
                 <button type="button" className="btn-close" onClick={() => setShowLogin(false)}></button>
               </div>
               <div className="modal-body">
-                <LoginForm />
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {showRegister && (
-        <div className="modal show d-block" style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">Registro</h5>
-                <button type="button" className="btn-close" onClick={() => setShowRegister(false)}></button>
-              </div>
-              <div className="modal-body">
-                <RegisterForm />
+                <Login />
               </div>
             </div>
           </div>
