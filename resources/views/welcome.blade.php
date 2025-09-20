@@ -1,4 +1,4 @@
-<?php<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     @viteReactRefresh
     @vite('resources/js/app.jsx')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
     <div id="app" data-app-name="{{ config('app.name') }}"></div>
