@@ -8,35 +8,35 @@ class DashboardController extends Controller
 {
     public function estudiante(Request $request)
     {
-        return view('dashboards.estudiante', [
+        return view('estudiante.dashboards', [
             'user' => $request->user()
         ]);
     }
 
     public function profesor(Request $request)
     {
-        return view('dashboards.profesor', [
+        return view('profesor.dashboards', [
             'user' => $request->user()
         ]);
     }
 
     public function rector(Request $request)
     {
-        return view('dashboards.rector', [
+        return view('rector.dashboards', [
             'user' => $request->user()
         ]);
     }
 
     public function coordinadora(Request $request)
     {
-        return view('dashboards.coordinadora', [
+        return view('coordinadora.dashboards', [
             'user' => $request->user()
         ]);
     }
 
     public function secretaria(Request $request)
     {
-        return view('dashboards.secretaria', [
+        return view('secretaria.dashboards', [
             'user' => $request->user()
         ]);
     }

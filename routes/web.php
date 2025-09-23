@@ -16,32 +16,32 @@ Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logo
 // Rutas protegidas por roles - Servir vistas React
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::middleware(['role:estudiante'])->group(function () {
-        Route::get('/dashboard/estudiante', function () {
+        Route::get('/estudiante/dashboard', function () {
             return view('dashboard', ['role' => 'estudiante']);
         });
     });
     Route::middleware(['role:profesor'])->group(function () {
-        Route::get('/dashboard/profesor', function () {
+        Route::get('/profesor/dashboard', function () {
             return view('dashboard', ['role' => 'profesor']);
         });
     });
     // Dashboard Rector (acceso a todo)
     Route::middleware(['role:rector'])->group(function () {
-        Route::get('/dashboard/rector', function () {
+        Route::get('/rector/dashboard', function () {
             return view('dashboard', ['role' => 'rector']);
         });
     });
     
     // Dashboard Coordinadora
     Route::middleware(['role:coordinadora'])->group(function () {
-        Route::get('/dashboard/coordinadora', function () {
+        Route::get('/coordinadora/dashboard', function () {
             return view('dashboard', ['role' => 'coordinadora']);
         });
     });
     
     // Dashboard Secretaria
     Route::middleware(['role:secretaria'])->group(function () {
-        Route::get('/dashboard/secretaria', function () {
+        Route::get('/secretaria/dashboard', function () {
             return view('dashboard', ['role' => 'secretaria']);
         });
     });
